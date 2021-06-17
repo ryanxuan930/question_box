@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: https://ryanxuan930.github.io");
 class database extends mysqli{
 	private $server="127.0.0.1";
 	private $username="twitter";

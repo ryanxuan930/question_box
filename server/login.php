@@ -15,7 +15,8 @@ if($result->num_rows){
     }
     if(password_verify($password,$hash)){
         $_SESSION["account"] = $account;
-        echo '<script>location.href="https://ryanxuan930.github.io/question_box/admin/main.html";</script>';
+        print_r($_SESSION);
+        //echo '<script>location.href="https://ryanxuan930.github.io/question_box/admin/main.html";</script>';
     }else{
         echo '<script>alert("密碼錯誤");location.href="https://ryanxuan930.github.io/question_box/admin/login.html";</script>';
     }

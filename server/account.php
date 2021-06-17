@@ -1,7 +1,5 @@
 <?php
-session_start();
-print_r($_SESSION);
-$account = $_SESSION["account"];
+$account = $_POST["account"];
 header("Access-Control-Allow-Origin: https://ryanxuan930.github.io");
 include("dbclass.php");
 $db = new database("twitter");

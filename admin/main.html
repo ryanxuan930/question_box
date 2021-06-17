@@ -158,6 +158,23 @@
                             _this.getData();
                         })
                     }
+                },
+                changeName(){
+                    var newName = prompt("請輸入新名字");
+                    if(newName!=""){
+                        $.post("https://rikujo.xyz/question_box/server/name.php",{account: localStorage.account, name: newName}, function(data){
+                            alert(data);
+                        });
+                    }
+                },
+                changePassword(){
+                    var newPassword = prompt("請輸入密碼");
+                    var passwordConfirm = prompt("請再次輸入密碼");
+                    if(newPassword!="" && newPassword==passwordConfirm){
+                        $.post("https://rikujo.xyz/question_box/server/password.php",{account: localStorage.account, password: newPassword}, function(data){
+                            alert(data);
+                        });
+                    }
                 }
             },
             created() {

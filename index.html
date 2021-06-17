@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Ryan Po-Hsuan Chang (ryanxuan930)">
+<meta name="description" content="Questionbox  1.0">
+<meta name="keywords" content="Questionbox, 匿名留言">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="google-site-verification" content="np95X1Vm5JXHroZEPOszci0g4ivNS-qtInvuT3YmjHk" />
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/laoding.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.11/vue.global.prod.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<title>Questionbox</title>
+<style>
+    .question_box {
+        border: 2px #424242 solid;
+        border-radius: 5px;
+    }
+    .submit_button {
+        border: 0;
+        background-color: #1976D2;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+    <div id="app">
+        <h1>留下你想問的問題吧</h1>
+        <hr>
+        <textarea class="question_box" cols="30" rows="10"></textarea>
+        <button class="submit_button">送出問題</button>
+        <hr>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    
+                }
+            },
+        });
+    </script>
+</body>
+</html>

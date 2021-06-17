@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: https://ryanxuan930.github.io");
 include("database.php");
 if(!isset($_POST["name"])){
     echo "請填寫暱稱！";

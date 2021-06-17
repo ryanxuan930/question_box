@@ -165,6 +165,8 @@
                         $.post("https://rikujo.xyz/question_box/server/name.php",{account: localStorage.account, name: newName}, function(data){
                             alert(data);
                         });
+                    }else{
+                        alert("名字不得為空");
                     }
                 },
                 changePassword(){
@@ -174,6 +176,8 @@
                         $.post("https://rikujo.xyz/question_box/server/password.php",{account: localStorage.account, password: newPassword}, function(data){
                             alert(data);
                         });
+                    }else{
+                        alert("輸入不正確");
                     }
                 }
             },

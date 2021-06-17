@@ -166,8 +166,7 @@
             },
             created() {
                 this.fetchQuestion();
-                _this = this;
-                setInterval(_this.fetchQuestion(),10000);
+                setInterval(this.fetchQuestion(),10000);
             },
         });
         app.mount('#app');

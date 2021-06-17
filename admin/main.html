@@ -42,9 +42,9 @@
     .content {
         margin: 100px auto;
         width: 500px;
-        background-color: white;
     }
     .box {
+        background-color: white;
         margin: 10px 0;
         box-shadow: 1px 1px gray 10px;
         padding: 25px;
@@ -73,7 +73,7 @@
     <div id="app">
         <div class="content">
             <div v-for="(data, index) in data_list" :key="index">
-                <div class="box shadow">
+                <div class="box">
                     <div>暱稱：{{data.name}}</div>
                     <hr>
                     <div>問題：{{data.content}}</div>

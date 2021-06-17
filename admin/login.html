@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="author" content="Ryan Po-Hsuan Chang (ryanxuan930)">
 <meta name="description" content="Questionbox  1.0">
-<meta name="keywords" content="Questionbox, 匿名留言">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="google-site-verification" content="np95X1Vm5JXHroZEPOszci0g4ivNS-qtInvuT3YmjHk" />
 <link rel="preconnect" href="https://fonts.gstatic.com"> 
@@ -92,46 +91,22 @@
 <body>
     <div id="app">
         <div class="content box">
-            <div class="title center">留下你想問的問題吧～
-            </div>
-            <label>
-                <div>暱稱：</div>
-                <input class="question_box" type="text" v-model="nickname">
-            </label>
-            <label>
-                <div>問題：</div>
-                <textarea class="question_box" rows="6" v-model="content"></textarea>
-            </label>
-            <div>
-                <button class="submit_button" @click="sendQuestion">送出問題</button>
-            </div>
+            <h2>帳號登入</h2>
+            <form action="../server/login.php" method="POST">
+                <label>
+                    帳號：
+                    <input class="question_box" name="account" type="email">
+                </label>
+                <label>
+                    密碼：
+                    <input class="question_box" name="password" type="password">
+                </label>
+                <div>
+                    <button class="submit_button">登入</button>
+                </div>
+            </form>
+            
         </div>
     </div>
-    <script>
-        const app = Vue.createApp({
-            data() {
-                return {
-                    nickname: "",
-                    content: "",
-                }
-            },
-            methods: {
-                sendQuestion(){
-                    _this = this;
-                    if(this.nickname==""){
-                        alert("請填寫暱稱！");
-                    }else if(this.content==""){
-                        alert("請填寫問題！");
-                    }else{
-                        $.post("https://rikujo.xyz/question_box/server/data.php",{name: _this.nickname,data: _this.content},function(data){
-                            alert(data);
-                        });
-                    }
-                    
-                }
-            },
-        });
-        app.mount('#app');
-    </script>
 </body>
 </html>

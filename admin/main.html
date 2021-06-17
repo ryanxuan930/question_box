@@ -170,10 +170,11 @@
                 changeName(){
                     var _this = this;
                     var newName = prompt("請輸入新名字");
+                    console.log(newName);
                     if(newName!=""){
                         $.post("https://rikujo.xyz/question_box/server/name.php",{account: localStorage.account, name: newName}, function(data){
                             alert(data);
-                            this.getAccount();
+                            _this.getAccount();
                         });
                     }else{
                         alert("名字不得為空");

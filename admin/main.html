@@ -72,6 +72,13 @@
 <body>
     <div id="app">
         <div class="content">
+            <div class="box">
+                <h3>系統資訊</h3>
+                <hr>
+                <div>帳號：{{account}}</div>
+                <div>名稱：{{name}}</div>
+                <button>登出系統</button>
+            </div>
             <div v-for="(data, index) in data_list" :key="index">
                 <div class="box">
                     <div>暱稱：{{data.name}}</div>
@@ -87,6 +94,8 @@
         const app = Vue.createApp({
             data() {
                 return {
+                    account: "",
+                    name: "",
                     data_list: {},
                     list_len: 0,
                 }

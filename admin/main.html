@@ -99,7 +99,9 @@
                     <hr>
                     <div>問題：<br>{{data.content}}</div>
                     <div class="time">[{{data.time}}]</div>
-                    <div><button @click="delete(data.id)">刪除此問題</button></div>
+                    <div>
+                        <button class="logout" @click="delete(data.id)">刪除此問題</button>
+                    </div>
                 </div>
             </div>
             <div class="box" v-if="list_len==0">目前沒有資料唷</div>

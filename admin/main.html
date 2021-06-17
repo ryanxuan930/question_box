@@ -130,7 +130,13 @@
                 if(!localStorage.account){
                     var queryString = window.location.search;
                     var urlParams = new URLSearchParams(queryString);
-                    localStorage.account = urlParams.get('account');
+                    if(urlParams.get('account')){
+                        localStorage.account = urlParams.get('account');
+                    }else{
+                        alert("尚未登入");
+                        location.href="https://ryanxuan930.github.io/question_box/admin/login.html";
+                    }
+                    
                 }
                 var _this = this, account = localStorage.account;
                     $.post("https://rikujo.xyz/question_box/server/account.php",{account: localStorage.account},function(data){

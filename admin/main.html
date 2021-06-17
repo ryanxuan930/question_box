@@ -134,6 +134,13 @@
                 }
             },
             methods: {
+                getAccount(){
+                    $.post("https://rikujo.xyz/question_box/server/account.php",{account: localStorage.account},function(data){
+                        var list = JSON.parse(data);
+                        _this.account = list.account;
+                        _this.name = list.name;
+                    });
+                },
                 getData(){
                     var _this = this;
                     $.get("https://rikujo.xyz/question_box/server/fetch.php",function(data){
@@ -160,10 +167,12 @@
                     }
                 },
                 changeName(){
+                    var _this = this;
                     var newName = prompt("請輸入新名字");
                     if(newName!=""){
                         $.post("https://rikujo.xyz/question_box/server/name.php",{account: localStorage.account, name: newName}, function(data){
                             alert(data);
+                            this.
                         });
                     }else{
                         alert("名字不得為空");
@@ -194,13 +203,8 @@
                     }
                     
                 }
-                var _this = this, account = localStorage.account;
-                    $.post("https://rikujo.xyz/question_box/server/account.php",{account: localStorage.account},function(data){
-                        console.log(data);
-                        var list = JSON.parse(data);
-                        _this.account = list.account;
-                        _this.name = list.name;
-                    });
+                var _this = this;
+                this.getAccount();
                 this.getData();
                 setInterval(this.interval,10000);
             },

@@ -125,6 +125,8 @@
                     }else{
                         $.post("https://rikujo.xyz/question_box/server/data.php",{name: _this.nickname,data: _this.content},function(data){
                             alert(data);
+                            _this.nickname="";
+                            _this.content="";
                         });
                     }
                     

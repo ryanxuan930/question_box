@@ -60,7 +60,7 @@
     }
     hr {
         margin: 5px 0;
-        border: 2px #424242 solid;
+        border: 1px #1976D2 solid;
     }
     .time {
         text-align: right;
@@ -72,11 +72,13 @@
 <body>
     <div id="app">
         <div class="content">
-            <div class="box shadow" v-for="(data, index) in data_list" :key="index">
-                <div>暱稱：{{data.name}}</div>
-                <hr>
-                <div>問題：{{data.content}}</div>
-                <div class="time">{{data.time}}</div>
+            <div v-for="(data, index) in data_list" :key="index">
+                <div class="box shadow">
+                    <div>暱稱：{{data.name}}</div>
+                    <hr>
+                    <div>問題：{{data.content}}</div>
+                    <div class="time">{{data.time}}</div>
+                </div>
             </div>
         </div>
     </div>

@@ -14,11 +14,11 @@ if($result->num_rows){
     if(password_verify($password,$hash)){
         header("Location: https://ryanxuan930.github.io/question_box/admin/main.html");
     }else{
-        echo "密碼錯誤";
+        echo "<script>alert('密碼錯誤');</script>";
         header("Location: https://ryanxuan930.github.io/question_box/admin/login.html");
     }
 }else{
-    echo "帳號錯誤";
+    echo "<script>alert('帳號錯誤');</script>";
     header("Location: https://ryanxuan930.github.io/question_box/admin/login.html");
 }
 ?>

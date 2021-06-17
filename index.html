@@ -87,23 +87,38 @@
         margin: 5px 0;
         border: 2px #424242 solid;
     }
+    .other_box {
+        border: 2px #2196F3 solid;
+        padding: 5px;
+    }
 </style>
 </head>
 <body>
     <div id="app">
-        <div class="content box">
-            <div class="title center">留下你想問的問題吧～
+        <div class="content">
+            <div class="box">
+                <div class="title center">留下你想問的問題吧～</div>
+                <label>
+                    <div>暱稱：</div>
+                    <input class="question_box" type="text" v-model="nickname">
+                </label>
+                <label>
+                    <div>問題：</div>
+                    <textarea class="question_box" rows="6" v-model="content"></textarea>
+                </label>
+                <div>
+                    <button class="submit_button" @click="sendQuestion">送出問題</button>
+                </div>
             </div>
-            <label>
-                <div>暱稱：</div>
-                <input class="question_box" type="text" v-model="nickname">
-            </label>
-            <label>
-                <div>問題：</div>
-                <textarea class="question_box" rows="6" v-model="content"></textarea>
-            </label>
-            <div>
-                <button class="submit_button" @click="sendQuestion">送出問題</button>
+            <div class="box">
+                <div class="title center">其他人也在問</div>
+                <div v-for="question in questions">
+                    <div class="other_box">
+                        <div>[{{question.time}}] {{question.name}}</div>
+                        <hr>
+                        <div>{{question.content}}</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -113,6 +128,7 @@
                 return {
                     nickname: "",
                     content: "",
+                    questions: {},
                 }
             },
             methods: {
@@ -129,9 +145,15 @@
                             alert(data);
                             _this.nickname="";
                             _this.content="";
+                            _this.fetchQuestion();
                         });
                     }
-                    
+                },
+                fetchQuestion(){
+                    _this = this;
+                    $.post("https://rikujo.xyz/question_box/server/data.php",{name: _this.nickname,data: _this.content},function(data){
+                        _this.questions = JSON.parse(data);
+                    });
                 }
             },
         });

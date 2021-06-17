@@ -91,7 +91,7 @@
                 <hr>
                 <div>帳號：{{account}}</div>
                 <div>名稱：{{name}}</div>
-                <button class="logout">登出系統</button>
+                <button class="logout" @click="logout">登出系統</button>
             </div>
             <div v-for="(data, index) in data_list" :key="index">
                 <div class="box">
@@ -124,6 +124,11 @@
                 },
                 interval(){
                     this.getData();
+                },
+                logout(){
+                    localStorage.clear();
+                    alert("已登出");
+                    location.href="https://ryanxuan930.github.io/question_box/admin/login.html";
                 }
             },
             created() {

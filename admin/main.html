@@ -119,6 +119,7 @@
                 }
             },
             created() {
+                console.log(localStorage.account);
                 var _this = this;
                     $.post("https://rikujo.xyz/question_box/server/account.php",{account: localStorage.account},function(data){
                         console.log(data);

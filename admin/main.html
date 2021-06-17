@@ -67,8 +67,22 @@
         color: #1976D2;
         font-size: 10pt;
     }
+    .button {
+        margin: 5px 10px 5px 0;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: #1976D2;
+        border: 2px #1976D2 solid;
+        background-color: white;
+        cursor: pointer;
+        transition-duration: 0.5s;
+    }
+    .button:hover {
+        color: white;
+        background-color: #1976D2;
+    }
     .logout {
-        margin: 5px 0;
+        margin: 5px 10px 5px 0;
         padding: 5px 10px;
         border-radius: 5px;
         color: #B71C1C;
@@ -91,6 +105,8 @@
                 <hr>
                 <div>帳號：{{account}}</div>
                 <div>名稱：{{name}}</div>
+                <button class="button" @click="changeName">變更名稱</button>
+                <button class="button" @click="changePassword">變更密碼</button>
                 <button class="logout" @click="logout">登出系統</button>
             </div>
             <div v-for="(data, index) in data_list" :key="index">

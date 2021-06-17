@@ -138,7 +138,7 @@
                     var r = confirm("確定刪除此問題？");
                     if(r){
                         $.post("https://rikujo.xyz/question_box/server/delete.php",{id: id},function(data){
-                            alert(data);
+                            console.log(data);
                             _this.getData();
                         })
                     }

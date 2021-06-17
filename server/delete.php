@@ -2,6 +2,7 @@
 header("Access-Control-Allow-Origin: https://ryanxuan930.github.io");
 include("dbclass.php");
 $db = new database("twitter");
+$db->table("data");
 $id = $_POST["id"];
 if(is_numeric($id)){
     $db->delete("id = {$id}");

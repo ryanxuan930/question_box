@@ -80,6 +80,7 @@
                     <div class="time">[{{data.time}}]</div>
                 </div>
             </div>
+            <div class="box" v-if="list_len==0">目前沒有資料唷</div>
         </div>
     </div>
     <script>
@@ -87,6 +88,7 @@
             data() {
                 return {
                     data_list: {},
+                    list_len: 0,
                 }
             },
             methods: {
@@ -94,6 +96,7 @@
                     var _this = this;
                     $.get("https://rikujo.xyz/question_box/server/fetch.php",function(data){
                         _this.data_list = JSON.parse(data);
+                        _this.list_len = _this.data_list.length;
                     });
                 },
                 interval(){

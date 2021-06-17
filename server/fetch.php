@@ -7,6 +7,7 @@ $result = $db->select_all();
 $array = array();
 $i=0;
 while($row = $result->fetch_assoc()){
+    $array[$i]["id"] = $row["id"];
     $array[$i]["name"] = $row["name"];
     $array[$i]["content"] = $row["question"];
     $array[$i]["time"] = $row["timestamp"];

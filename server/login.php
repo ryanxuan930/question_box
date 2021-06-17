@@ -1,5 +1,4 @@
 <?php
-session_start();
 header("Access-Control-Allow-Origin: https://ryanxuan930.github.io");
 include("database.php");
 $conn->select_db("twitter");

@@ -99,6 +99,7 @@
                     <hr>
                     <div>問題：<br>{{data.content}}</div>
                     <div class="time">[{{data.time}}]</div>
+                    <div><button @click="delete(data.id)">刪除此問題</button></div>
                 </div>
             </div>
             <div class="box" v-if="list_len==0">目前沒有資料唷</div>
@@ -129,6 +130,16 @@
                     localStorage.clear();
                     alert("已登出");
                     location.href="https://ryanxuan930.github.io/question_box/admin/login.html";
+                },
+                delete(id){
+                    var _this = this;
+                    var r = confirm("確定刪除此問題？");
+                    if(r){
+                        $.post("https://rikujo.xyz/question_box/server/delete.php",{id: id},function(data){
+                            alert(data);
+                            _this.getData();
+                        })
+                    }
                 }
             },
             created() {

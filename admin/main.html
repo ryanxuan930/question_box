@@ -100,7 +100,7 @@
                     <div>問題：<br>{{data.content}}</div>
                     <div class="time">[{{data.time}}]</div>
                     <div>
-                        <button class="logout" @click="delete(data.id)">刪除此問題</button>
+                        <button class="logout" @click="deleteData(data.id)">刪除此問題</button>
                     </div>
                 </div>
             </div>
@@ -133,7 +133,7 @@
                     alert("已登出");
                     location.href="https://ryanxuan930.github.io/question_box/admin/login.html";
                 },
-                delete(id){
+                deleteData(id){
                     var _this = this;
                     var r = confirm("確定刪除此問題？");
                     if(r){

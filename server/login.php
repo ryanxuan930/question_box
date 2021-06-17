@@ -13,11 +13,11 @@ if($result->num_rows){
         $hash = $row["password"];
     }
     if(password_verify($password,$hash)){
-        echo '<script>location.href="https://ryanxuan930.github.io/question_box/admin/main.html;"</script>';
+        echo '<script>location.href="https://ryanxuan930.github.io/question_box/admin/main.html";</script>';
     }else{
-        echo '<script>alert("密碼錯誤");location.href="https://ryanxuan930.github.io/question_box/admin/login.html;"</script>';
+        echo '<script>alert("密碼錯誤");location.href="https://ryanxuan930.github.io/question_box/admin/login.html";</script>';
     }
 }else{
-    echo '<script>alert("帳號錯誤");location.href="https://ryanxuan930.github.io/question_box/admin/login.html;"</script>';
+    echo '<script>alert("帳號錯誤");location.href="https://ryanxuan930.github.io/question_box/admin/login.html";</script>';
 }
 ?>

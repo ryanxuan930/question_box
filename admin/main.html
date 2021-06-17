@@ -113,6 +113,12 @@
                 }
             },
             created() {
+                var _this = this;
+                    $.get("https://rikujo.xyz/question_box/server/account.php",function(data){
+                        var list = JSON.parse(data);
+                        _this.account = list.account;
+                        _this.name = list.name;
+                    });
                 this.getData();
                 setInterval(this.interval,10000);
             },

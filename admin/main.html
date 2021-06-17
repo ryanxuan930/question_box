@@ -132,6 +132,7 @@
                     var urlParams = new URLSearchParams(queryString);
                     if(urlParams.get('account')){
                         localStorage.account = urlParams.get('account');
+                        location.href="https://ryanxuan930.github.io/question_box/admin/main.html";
                     }else{
                         alert("尚未登入");
                         location.href="https://ryanxuan930.github.io/question_box/admin/login.html";

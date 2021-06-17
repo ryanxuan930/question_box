@@ -1,5 +1,5 @@
 <?php
-header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: https://ryanxuan930.github.io");
 include("database.php");
 $conn->select_db("twitter");
 $account = $_POST["account"];

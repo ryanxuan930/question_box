@@ -1,5 +1,4 @@
 <?php
-header("Access-Control-Allow-Origin: https://ryanxuan930.github.io");
 $dbserver="127.0.0.1";
 $dbusername="twitter";
 $dbpassword="K0OMT4lftY5Ue7ki";

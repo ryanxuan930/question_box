@@ -173,7 +173,7 @@
                     if(newName!=""){
                         $.post("https://rikujo.xyz/question_box/server/name.php",{account: localStorage.account, name: newName}, function(data){
                             alert(data);
-                            this.
+                            this.getAccount();
                         });
                     }else{
                         alert("名字不得為空");

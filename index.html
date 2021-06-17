@@ -151,7 +151,7 @@
                 },
                 fetchQuestion(){
                     _this = this;
-                    $.post("https://rikujo.xyz/question_box/server/data.php",{name: _this.nickname,data: _this.content},function(data){
+                    $.post("https://rikujo.xyz/question_box/server/fetch.php",{name: _this.nickname,data: _this.content},function(data){
                         _this.questions = JSON.parse(data);
                     });
                 }

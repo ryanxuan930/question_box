@@ -60,12 +60,12 @@
     }
     hr {
         margin: 5px 0;
-        border: 1px #1976D2 solid;
+        border: 1px#BBDEFB solid;
     }
     .time {
         text-align: right;
         color: #1976D2;
-        font-size: 12pt;
+        font-size: 10pt;
     }
 </style>
 </head>
@@ -76,8 +76,8 @@
                 <div class="box">
                     <div>暱稱：{{data.name}}</div>
                     <hr>
-                    <div>問題：{{data.content}}</div>
-                    <div class="time">{{data.time}}</div>
+                    <div>問題：<br>{{data.content}}</div>
+                    <div class="time">[{{data.time}}]</div>
                 </div>
             </div>
         </div>

@@ -13,6 +13,7 @@ if($result->num_rows){
         $hash = $row["password"];
     }
     if(password_verify($password,$hash)){
+        session_start();
         $_SESSION["account"] = $account;
         echo '<script>location.href="https://ryanxuan930.github.io/question_box/admin/main.html";</script>';
     }else{

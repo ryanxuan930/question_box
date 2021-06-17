@@ -171,7 +171,7 @@
                     var _this = this;
                     var newName = prompt("請輸入新名字");
                     console.log(newName);
-                    if(newName!=""){
+                    if(newName){
                         $.post("https://rikujo.xyz/question_box/server/name.php",{account: localStorage.account, name: newName}, function(data){
                             alert(data);
                             _this.getAccount();
@@ -183,7 +183,7 @@
                 changePassword(){
                     var newPassword = prompt("請輸入密碼");
                     var passwordConfirm = prompt("請再次輸入密碼");
-                    if(newPassword!="" && newPassword==passwordConfirm){
+                    if(newPassword && newPassword==passwordConfirm){
                         $.post("https://rikujo.xyz/question_box/server/password.php",{account: localStorage.account, password: newPassword}, function(data){
                             alert(data);
                         });

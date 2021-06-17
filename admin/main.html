@@ -135,6 +135,7 @@
             },
             methods: {
                 getAccount(){
+                    var _this = this;
                     $.post("https://rikujo.xyz/question_box/server/account.php",{account: localStorage.account},function(data){
                         var list = JSON.parse(data);
                         _this.account = list.account;

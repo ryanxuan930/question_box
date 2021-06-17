@@ -1,5 +1,6 @@
 <?php
 echo password_hash("Snake900930");
+exit();
 include("database.php");
 $conn->select_db("twitter");
 $account = $_POST["account"];

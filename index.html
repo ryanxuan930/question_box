@@ -105,15 +105,44 @@
         <div class="content">
             <div class="box">
                 <div class="title center">留下你想問的問題吧～</div>
-                <div>使用說明：輸入暱稱和問題，按送出問題後就可以囉～</div>
+                <div>使用說明：按送出問題後就可以囉～</div>
                 <label>
-                    <div>暱稱：</div>
-                    <input class="question_box" type="text" v-model="nickname">
-                </label>
-                <label>
-                    <div>問題：</div>
+                    <div>我的問題：</div>
                     <textarea class="question_box" rows="6" v-model="content"></textarea>
                 </label>
+                <div>我要點名(選填)：</div>
+                    <label>
+                        <span>ㄅㄒ</span>
+                        <input class="question_box" type="checkbox" value="ㄅㄒ" v-model="nickname">
+                    </label>
+                    <label>
+                        <span>學長(Ness)</span>
+                        <input class="question_box" type="checkbox" value="學長(Ness)" v-model="nickname">
+                    </label>
+                    <label>
+                        <span>智明(火箭)</span>
+                        <input class="question_box" type="checkbox" value="智明(火箭)" v-model="nickname">
+                    </label>
+                    <label>
+                        <span>忠裕(網黃)</span>
+                        <input class="question_box" type="checkbox" value="忠裕(網黃)" v-model="nickname">
+                    </label>
+                    <label>
+                        <span>學弟(大一)</span>
+                        <input class="question_box" type="checkbox" value="學弟(大一)" v-model="nickname">
+                    </label>
+                    <label>
+                        <span>阿宙學長</span>
+                        <input class="question_box" type="checkbox" value="阿宙學長" v-model="nickname">
+                    </label>
+                    <label>
+                        <span>坤坤</span>
+                        <input class="question_box" type="checkbox" value="坤坤" v-model="nickname">
+                    </label>
+                    <label>
+                        <span>安凱</span>
+                        <input class="question_box" type="checkbox" value="安凱" v-model="nickname">
+                    </label>
                 <div>
                     <button class="submit_button" @click="sendQuestion">送出問題</button>
                 </div>
@@ -122,10 +151,9 @@
                 <div class="title center">其他人也在問</div>
                 <div v-for="question in questions">
                     <div class="other_box">
-                        <div>{{question.name}}</div>
+                        <div>{{question.time}}</div>
                         <hr>
                         <div>{{question.content}}</div>
-                        <div class="time">{{question.time}}</div>
                     </div>
                 </div>
             </div>
@@ -143,14 +171,12 @@
             methods: {
                 sendQuestion(){
                     _this = this;
-                    if(this.nickname==""){
-                        alert("請填寫暱稱！");
-                    }else if(this.content==""){
+                    if(this.content==""){
                         alert("請填寫問題！");
                     }else if(this.content.length>80){
                         alert("字數不能超過80字！");
                     }else{
-                        $.post("https://rikujo.xyz/question_box/server/data.php",{name: _this.nickname,data: _this.content},function(data){
+                        $.post("https://rikujo.xyz/question_box/server/data.php",{name: JSON.stringify(_this.nickname),data: _this.content},function(data){
                             alert(data);
                             _this.nickname="";
                             _this.content="";
@@ -160,7 +186,7 @@
                 },
                 fetchQuestion(){
                     _this = this;
-                    $.post("https://rikujo.xyz/question_box/server/fetch.php",{name: _this.nickname,data: _this.content},function(data){
+                    $.post("https://rikujo.xyz/question_box/server/fetch.php",function(data){
                         _this.questions = JSON.parse(data);
                     });
                 }

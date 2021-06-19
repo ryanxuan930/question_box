@@ -195,6 +195,9 @@
                 this.fetchQuestion();
                 setInterval(this.fetchQuestion,60000);
             },
+            updated() {
+                console.log(this.nickname);
+            },
         });
         app.mount('#app');
     </script>

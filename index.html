@@ -113,35 +113,35 @@
                 <div>我要點名(選填)：</div>
                     <label>
                         <span>ㄅㄒ</span>
-                        <input class="question_box" type="checkbox" value="ㄅㄒ" v-model="nickname">
+                        <input type="checkbox" value="ㄅㄒ" v-model="nickname">
                     </label>
                     <label>
                         <span>學長(Ness)</span>
-                        <input class="question_box" type="checkbox" value="學長(Ness)" v-model="nickname">
+                        <input type="checkbox" value="學長(Ness)" v-model="nickname">
                     </label>
                     <label>
                         <span>智明(火箭)</span>
-                        <input class="question_box" type="checkbox" value="智明(火箭)" v-model="nickname">
+                        <input type="checkbox" value="智明(火箭)" v-model="nickname">
                     </label>
                     <label>
                         <span>忠裕(網黃)</span>
-                        <input class="question_box" type="checkbox" value="忠裕(網黃)" v-model="nickname">
+                        <input type="checkbox" value="忠裕(網黃)" v-model="nickname">
                     </label>
                     <label>
                         <span>學弟(大一)</span>
-                        <input class="question_box" type="checkbox" value="學弟(大一)" v-model="nickname">
+                        <input type="checkbox" value="學弟(大一)" v-model="nickname">
                     </label>
                     <label>
                         <span>阿宙學長</span>
-                        <input class="question_box" type="checkbox" value="阿宙學長" v-model="nickname">
+                        <input type="checkbox" value="阿宙學長" v-model="nickname">
                     </label>
                     <label>
                         <span>坤坤</span>
-                        <input class="question_box" type="checkbox" value="坤坤" v-model="nickname">
+                        <input type="checkbox" value="坤坤" v-model="nickname">
                     </label>
                     <label>
                         <span>安凱</span>
-                        <input class="question_box" type="checkbox" value="安凱" v-model="nickname">
+                        <input type="checkbox" value="安凱" v-model="nickname">
                     </label>
                 <div>
                     <button class="submit_button" @click="sendQuestion">送出問題</button>
@@ -163,7 +163,7 @@
         const app = Vue.createApp({
             data() {
                 return {
-                    nickname: "",
+                    nickname: [],
                     content: "",
                     questions: {},
                 }

@@ -94,9 +94,8 @@
         padding: 10px;
         border-radius: 5px;
     }
-    .time {
-        text-align: right;
-        font-size: 10pt;
+    .check_section label {
+        margin-right: 10px;
     }
 </style>
 </head>
@@ -111,10 +110,13 @@
                     <textarea class="question_box" rows="6" v-model="content"></textarea>
                 </label>
                 <div>我要點名(選填)：</div>
+                <div>
                     <label>
                         <span>ㄅㄒ</span>
                         <input type="checkbox" value="ㄅㄒ" v-model="nickname">
                     </label>
+                </div>
+                <div class="check_section">
                     <label>
                         <span>學長(Ness)</span>
                         <input type="checkbox" value="學長(Ness)" v-model="nickname">
@@ -143,6 +145,7 @@
                         <span>安凱</span>
                         <input type="checkbox" value="安凱" v-model="nickname">
                     </label>
+                </div>
                 <div>
                     <button class="submit_button" @click="sendQuestion">送出問題</button>
                 </div>

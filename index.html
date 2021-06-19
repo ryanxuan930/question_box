@@ -178,7 +178,11 @@
                     }else if(this.content.length>80){
                         alert("字數不能超過80字！");
                     }else{
-                        $.post("https://rikujo.xyz/question_box/server/data.php",{name: JSON.stringify(_this.nickname),data: _this.content},function(data){
+                        var names = "";
+                        _this.nickname.forEach(element => {
+                            names = names + " " + element;
+                        });
+                        $.post("https://rikujo.xyz/question_box/server/data.php",{name: names,data: _this.content},function(data){
                             alert(data);
                             _this.nickname=[];
                             _this.content="";

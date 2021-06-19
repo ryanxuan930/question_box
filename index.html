@@ -97,6 +97,9 @@
     .check_section label {
         margin-right: 10px;
     }
+    .names {
+        font-size: 12pt;
+    }
 </style>
 </head>
 <body>
@@ -152,10 +155,10 @@
                 <div class="title center">其他人也在問</div>
                 <div v-for="question in questions">
                     <div class="other_box">
-                        <div>{{question.time}}</div>
+                        <div>時間：{{question.time}}</div>
                         <hr>
-                        <div>{{question.content}}</div>
-                        <div>{{question.name}}</div>
+                        <div>問題：{{question.content}}</div>
+                        <div>被點名的：{{question.name}}</div>
                     </div>
                 </div>
             </div>

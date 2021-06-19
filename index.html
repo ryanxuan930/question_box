@@ -155,6 +155,7 @@
                         <div>{{question.time}}</div>
                         <hr>
                         <div>{{question.content}}</div>
+                        <div>{{question.name}}</div>
                     </div>
                 </div>
             </div>
@@ -179,7 +180,7 @@
                     }else{
                         $.post("https://rikujo.xyz/question_box/server/data.php",{name: JSON.stringify(_this.nickname),data: _this.content},function(data){
                             alert(data);
-                            _this.nickname="";
+                            _this.nickname=[];
                             _this.content="";
                             _this.fetchQuestion();
                         });
@@ -197,7 +198,6 @@
                 setInterval(this.fetchQuestion,60000);
             },
             updated() {
-                console.log(this.nickname);
                 console.log(JSON.stringify(this.nickname));
             },
         });

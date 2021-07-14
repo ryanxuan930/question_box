@@ -9,6 +9,7 @@ if(!isset($_POST["name"])){
     $content = $_POST["data"];
     $name = $_POST["name"];
 }
+
 $conn->select_db("twitter");
 $time = date("Y-m-d H:i:s");
 $stmt = $conn->prepare("INSERT INTO data (timestamp, name, question) VALUES (?,?,?)");
